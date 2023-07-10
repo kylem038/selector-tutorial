@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import selectCount from "../selectors/counter";
+import { selectCount, selectDoubleCount } from "../selectors/counter";
 import {
     decrement,
     increment,
@@ -8,6 +8,7 @@ import {
 
 const Counter = () => {
     const count = useSelector(selectCount);
+    const countDoubled = useSelector(selectDoubleCount);
     const dispatch = useDispatch();
 
     return (
@@ -27,6 +28,8 @@ const Counter = () => {
                 >
                     -
                 </button>
+                <h2>Count Doubled</h2>
+                <span>{countDoubled}</span>
             </div>
         </div>
     )
