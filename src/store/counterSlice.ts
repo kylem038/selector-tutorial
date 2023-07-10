@@ -1,4 +1,4 @@
-import { createSelector, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const counterSlice = createSlice({
   name: 'counter',
@@ -7,10 +7,6 @@ export const counterSlice = createSlice({
   },
   reducers: {
     increment: state => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
       state.value += 1
     },
     decrement: state => {
@@ -23,7 +19,5 @@ export const counterSlice = createSlice({
 })
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
-
-export const selectCount = createSelector(counterSlice.getInitialState, (state) => state.value);
 
 export default counterSlice.reducer;
