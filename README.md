@@ -1,3 +1,24 @@
+# Exploring The Benefits Of Selectors
+
+This repo was created to explore a bit of what the selector pattern provides when managing state.
+This pattern allows you to manage state in such a way that builds on itself. A good example of its
+usefulness comes into play where the data coming from a backend or other source does not change,
+but the way you display that data does. 
+
+The simple example I've created here is a counter, but we can extend the initial selector to show
+the count but doubled. 
+
+## Use case (TODO)
+
+To extrapolate this a bit more let's say we have a selector that decides whether or not a User can
+view a certain page. We've decided decided to say that a User can only view a page if they've
+enabled a certain setting on their profile. This becomes rather simple in that we can:
+1. create a selector to get the property on their profile
+2. add this selector to the selector that decides whether or not a user can view a page
+3. modify the logic and... voila! It just works. 
+
+--------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
