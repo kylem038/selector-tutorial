@@ -1,13 +1,13 @@
 import React from 'react';
 import Counter from './components/Counter';
 import './App.css';
+import Profile from './components/Profile';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Counter/>
-      </header>
+      <Profile/>
+      <Counter/>
     </div>
   );
 }
