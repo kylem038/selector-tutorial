@@ -11,6 +11,10 @@ const Profile = () => {
         <div className="Profile">
             <h3>Super Cool User</h3>
             <span>{firstName} {lastName}</span>
+            <div className="Checkbox">
+                <input type="checkbox"/>
+                <p>Show hidden content?</p>
+            </div>
         </div>
     );
 }

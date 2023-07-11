@@ -4,3 +4,7 @@
     align-items: flex-end;
     margin-right: 2em;
 }
+
+.Checkbox {
+    display: flex;
+}
