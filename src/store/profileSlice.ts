@@ -5,11 +5,12 @@ export const profileSlice = createSlice({
     initialState: {
       firstName: 'Ryan',
       lastName: 'Gosling',
-      showContent: false,
+      userOptin: false,
+      userLoggedIn: true,
     },
     reducers: {
       toggleShowContent: state => {
-        state.showContent = !state.showContent
+        state.userOptin = !state.userOptin
       }
     }
   })

@@ -8,7 +8,7 @@ but the way you display that data does.
 The simple example I've created here is a counter, but we can extend the initial selector to show
 the count but doubled. 
 
-## Use case (TODO)
+## Use case
 
 To extrapolate this a bit more let's say we have a selector that decides whether or not a User can
 view a certain page. We've decided decided to say that a User can only view a page if they've
