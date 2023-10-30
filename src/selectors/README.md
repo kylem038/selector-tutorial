@@ -43,9 +43,7 @@ ADD MORE INFO HERE
 - Selectors can be used anywhere you have access to the root state.
 - Define selectors alongside reducers
     - Most define selectors at the UI level, which can cause issues when other parts of the app want to use the same lookups. 
-    - Additionally, usually if a selector needs updated so does the reducer so keeping things close makes sense. 
-- Adding separate selector function for every single field is not a good idea!
-- Don’t memoize every selector either. Generally if you’re using map or filter it’s a good idea to memoize it. 
+    - Additionally, usually if a selector needs updated so does the reducer so keeping things close makes sense.  
 - Globalize selectors if needed.
     - Slice reducers usually only know about a piece of state. 
     - Selectors usually want the root state
@@ -53,6 +51,11 @@ ADD MORE INFO HERE
     - “Globalized” selectors accepts take the root state and figure out where to find the right slice
     - “Localized” selectors get a slice of state and don’t care about the root state.
 
+## Pitfalls
+
+- Note about null checks
+- Adding separate selector function for every single field is not a good idea!
+- Don’t memoize every selector either. Generally if you’re using map or filter it’s a good idea to memoize it.
 
 ## Resources
 
