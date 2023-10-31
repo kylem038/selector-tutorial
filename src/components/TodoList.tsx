@@ -17,10 +17,6 @@ const TodoList = () => {
         dispatch(addTodo({ id: new Date().getTime(), text: todoText, completed: false } as Todo));
     }
 
-    const handleChange = (todo: Todo) => {
-        dispatch(toggleTodoComplete(todo.id));
-    }
-
     return (
         <div className="Todos">
             <h3>To-Do List</h3>
@@ -50,7 +46,7 @@ const TodoList = () => {
                         <label>
                             <input 
                                 defaultChecked={todo.completed} 
-                                onChange={() => handleChange(todo)} 
+                                onChange={() => dispatch(toggleTodoComplete(todo.id))} 
                                 type="checkbox" 
                             />
                             Complete
