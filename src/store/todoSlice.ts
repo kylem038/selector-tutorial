@@ -25,6 +25,9 @@ export const todoSlice = createSlice({
             state.search = action.payload
         },
         toggleTodoComplete: (state, action: PayloadAction<number>) => {
+            // handling array iteration here is a bit weird
+            // state.todos is a proxy object instead of the array itself
+            // so we need to use current from the toolkit to get the actual array
             const currentState = current(state);
             state.todos = currentState.todos.map(todo => {
                 if(todo.id === action.payload) {
@@ -37,6 +40,6 @@ export const todoSlice = createSlice({
     }
 });
 
-export const { addTodo, toggleTodoComplete } = todoSlice.actions;
+export const { addTodo, changeSearch, toggleTodoComplete } = todoSlice.actions;
 
 export default todoSlice.reducer;

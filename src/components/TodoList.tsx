@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTodos } from '../selectors/todo';
-import { addTodo, toggleTodoComplete } from '../store/todoSlice';
+import { filteredTodos } from '../selectors/todo';
+import { addTodo, toggleTodoComplete, changeSearch } from '../store/todoSlice';
 import { useState } from 'react';
 import '../styles/Todos.css';
 
@@ -10,7 +10,7 @@ const TodoList = () => {
     const dispatch = useDispatch();
     const [todoText, setTodoText] = useState('');
 
-    const todos = useSelector(selectTodos);
+    const todos = useSelector(filteredTodos);
 
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
@@ -36,6 +36,12 @@ const TodoList = () => {
                     />
                     <button type="submit">Submit</button>
                 </form>
+            </div>
+            <div>
+                <input type="text" placeholder='Search To-dos' onChange={(e) => {
+                    let {value} = e.target;
+                    dispatch(changeSearch(value));
+                }} />
             </div>
             <div>
                 {todos && todos.length > 0 && todos.map(todo => (
