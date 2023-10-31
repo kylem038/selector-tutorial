@@ -2,6 +2,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectTodos } from '../selectors/todo';
 import { addTodo } from '../store/todoSlice';
 import { useState } from 'react';
+import '../styles/Todos.css';
+
+import { Todo } from '../store/todoSlice';
 
 const TodoList = () => {
     const dispatch = useDispatch();
@@ -11,11 +14,11 @@ const TodoList = () => {
 
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
-        dispatch(addTodo({ id: new Date().getTime(), text: todoText, completed: false }));
+        dispatch(addTodo({ id: new Date().getTime(), text: todoText, completed: false } as Todo));
     }
 
     return (
-        <div>
+        <div className="Todos">
             <h3>To-Do List</h3>
             <div>
                 <form onSubmit={handleSubmit}>
@@ -32,7 +35,13 @@ const TodoList = () => {
             </div>
             <div>
                 {todos && todos.map(todo => (
-                    <p key={todo.id}>{todo.text}</p>
+                    <div className="Todo" key={todo.id}>
+                        <p>{todo.text}</p>
+                        <label>
+                            <input checked={todo.completed} onChange={(e) => {}} type="checkbox" />
+                            Completed?
+                        </label>
+                    </div>
                 ))}
             </div>
 

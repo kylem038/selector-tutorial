@@ -1,0 +1,9 @@
+.TodosContainer {
+    padding-bottom: 3rem;
+}
+
+.Todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
