@@ -4,3 +4,8 @@
     margin: auto;
     font-size: 22px;
 }
+
+.CounterContainer {
+    border-bottom: 2px solid white;
+    padding-bottom: 3rem;
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCount, selectDoubleCount } from "../selectors/counter";
 import {
@@ -13,28 +12,26 @@ const Counter = () => {
     const dispatch = useDispatch();
 
     return (
-        <div>
-            <div>
-                <h1>Counter</h1>
-                <div className="Counter">
-                    <span>{count}</span>
-                    <button
-                        aria-label="Increment value"
-                        onClick={() => dispatch(increment())}
-                    >
-                        +
-                    </button>
-                    <button
-                        aria-label="Decrement value"
-                        onClick={() => dispatch(decrement())}
-                    >
-                        -
-                    </button>
-                </div>
-
-                <h2>Count Doubled</h2>
-                <span>{countDoubled}</span>
+        <div className="CounterContainer">
+            <h1>Counter</h1>
+            <div className="Counter">
+                <span>{count}</span>
+                <button
+                    aria-label="Increment value"
+                    onClick={() => dispatch(increment())}
+                >
+                    +
+                </button>
+                <button
+                    aria-label="Decrement value"
+                    onClick={() => dispatch(decrement())}
+                >
+                    -
+                </button>
             </div>
+
+            <h2>Count Doubled</h2>
+            <span>{countDoubled}</span>
         </div>
     )
 

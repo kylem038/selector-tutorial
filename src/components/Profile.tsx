@@ -1,8 +1,7 @@
-import React from "react";
-import '../styles/Profile.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFirstName, selectLastName, selectUserOptin, selectShowHiddenContent } from "../selectors/profile";
 import { toggleShowContent } from "../store/profileSlice";
+import '../styles/Profile.css';
 
 const Profile = () => {
     const dispatch = useDispatch();
