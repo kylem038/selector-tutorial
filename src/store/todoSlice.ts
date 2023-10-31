@@ -8,14 +8,21 @@ type Todo = {
 
 type Todos = Todo[];
 
-export const counterSlice = createSlice({
+export const todoSlice = createSlice({
     name: 'todo',
     initialState: {
-        todos: [] as Todos,
+        todos: [
+            { id: 1, text: "Grocery shopping", completed: false },
+            { id: 2, text: "Pack for trip", completed: false },
+        ] as Todos,
     },
     reducers: {
         addTodo: (state, action) => {
             state.todos.push(action.payload);
         },
     }
-})
+});
+
+export const { addTodo } = todoSlice.actions;
+
+export default todoSlice.reducer;
