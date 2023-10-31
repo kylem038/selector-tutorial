@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectTodos } from '../selectors/todo';
-import { addTodo } from '../store/todoSlice';
+import { addTodo, toggleTodoComplete } from '../store/todoSlice';
 import { useState } from 'react';
 import '../styles/Todos.css';
 
@@ -15,6 +15,10 @@ const TodoList = () => {
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
         dispatch(addTodo({ id: new Date().getTime(), text: todoText, completed: false } as Todo));
+    }
+
+    const handleChange = (todo: Todo) => {
+        dispatch(toggleTodoComplete(todo.id));
     }
 
     return (
@@ -34,12 +38,16 @@ const TodoList = () => {
                 </form>
             </div>
             <div>
-                {todos && todos.map(todo => (
+                {todos && todos.length > 0 && todos.map(todo => (
                     <div className="Todo" key={todo.id}>
                         <p>{todo.text}</p>
                         <label>
-                            <input checked={todo.completed} onChange={(e) => {}} type="checkbox" />
-                            Completed?
+                            <input 
+                                defaultChecked={todo.completed} 
+                                onChange={() => handleChange(todo)} 
+                                type="checkbox" 
+                            />
+                            Complete
                         </label>
                     </div>
                 ))}
