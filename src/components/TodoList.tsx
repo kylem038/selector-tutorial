@@ -15,6 +15,7 @@ const TodoList = () => {
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
         dispatch(addTodo({ id: new Date().getTime(), text: todoText, completed: false } as Todo));
+        setTodoText('');
     }
 
     return (
@@ -29,6 +30,7 @@ const TodoList = () => {
                             let { value } = e.target;
                             setTodoText(value);
                         }}
+                        value={todoText}
                     />
                     <button type="submit">Submit</button>
                 </form>
