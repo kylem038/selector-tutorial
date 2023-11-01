@@ -30,10 +30,21 @@ Resource link [here] (https://redux.js.org/usage/deriving-data-selectors#writing
 
 ## Input vs. Output Selectors
 
-ADD MORE INFO HERE
 - Input selectors and output selectors should be distinct. 
-    - Input selectors should be regular functions
-    - Output selectors will use “createSelector” to leverage memoization 
+- Input selectors should be regular functions
+    - Input selectors should extract and return values
+- Output selectors do some sort of transformation
+    - Output selectors should use “createSelector” to leverage memoization
+
+Example of an input selector
+```
+const selectCounter = createSelector(store.getState, state => state.counter);
+```
+
+Example of an output selector
+```
+export const selectDoubleCount = createSelector(selectCount, count => count * 2);
+```
 
 ## Best practices
 
