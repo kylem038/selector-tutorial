@@ -64,7 +64,7 @@ export const selectDoubleCount = createSelector(selectCount, count => count * 2)
 
 ## Pitfalls
 
-- Note about null checks
+- In my experience the selector pattern is great, but it's also where things tend to break. I've seen many an issue where data flows into a selector which is doing some sort of transformation, but -sometimes- the data is different and the selector breaks due to insufficent null checks.
 - Adding separate selector function for every single field is not a good idea!
 - Don’t memoize every selector either. Generally if you’re using map or filter it’s a good idea to memoize it.
 
