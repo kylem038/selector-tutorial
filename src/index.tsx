@@ -4,10 +4,12 @@ import './index.css';
 import App from './App';
 import Profile from './components/Profile';
 import TodoList from './components/TodoList';
+import Counter from './components/Counter';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import store from './store';
+import HomePage from './components/Home';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,7 +18,25 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />
+      },
+      {
+        path: 'counter',
+        element: <Counter />
+      },
+      {
+        path: 'todos',
+        element: <TodoList />
+      },
+      {
+        path: 'profile',
+        element: <Profile />
+      }
+    ]
   },
 ])
 
