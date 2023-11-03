@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import HomePage from "./Home";
 import "../styles/Root.css";
 
 const Root = () => {
